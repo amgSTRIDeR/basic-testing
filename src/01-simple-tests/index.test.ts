@@ -8,12 +8,20 @@ describe('simpleCalculator tests', () => {
     const result2 = simpleCalculator({ a: 3, b: -2, action: Action.Add });
     expect(result2).toBe(1);
 
-    const result3 = simpleCalculator({ a: Number.MIN_SAFE_INTEGER, b: Number.MAX_SAFE_INTEGER, action: Action.Add });
+    const result3 = simpleCalculator({
+      a: Number.MIN_SAFE_INTEGER,
+      b: Number.MAX_SAFE_INTEGER,
+      action: Action.Add,
+    });
     expect(result3).toBe(0);
   });
 
   test('should subtract two numbers', () => {
-    const result = simpleCalculator({ a: 555, b : 110, action: Action.Subtract });
+    const result = simpleCalculator({
+      a: 555,
+      b: 110,
+      action: Action.Subtract,
+    });
     expect(result).toBe(445);
   });
 
@@ -40,10 +48,18 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should exponentiate two numbers', () => {
-    const result1 = simpleCalculator({ a: 2, b: 3, action: Action.Exponentiate });
+    const result1 = simpleCalculator({
+      a: 2,
+      b: 3,
+      action: Action.Exponentiate,
+    });
     expect(result1).toBe(8);
 
-    const result2 = simpleCalculator({ a: 2, b: 0, action: Action.Exponentiate });
+    const result2 = simpleCalculator({
+      a: 2,
+      b: 0,
+      action: Action.Exponentiate,
+    });
     expect(result2).toBe(1);
   });
 
@@ -56,7 +72,6 @@ describe('simpleCalculator tests', () => {
     const result1 = simpleCalculator({ a: 123n, b: 999, action: Action.Add });
     expect(result1).toBe(null);
 
-    
     const result2 = simpleCalculator({ a: 5, b: '123', action: Action.Divide });
     expect(result2).toBe(null);
   });
